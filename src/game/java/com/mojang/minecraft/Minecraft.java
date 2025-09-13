@@ -638,8 +638,11 @@ public final class Minecraft implements Runnable {
 				this.screen.tick();
 			}
 		}
-
-		if(this.level != null) {
+		
+		if(this.connectionManager != null) {
+			this.connectionManager.tick();
+		}
+			if(this.level != null) {
 			LevelRenderer var16 = this.levelRenderer;
 			++var16.cloudTickCounter;
 			this.level.tickEntities();
